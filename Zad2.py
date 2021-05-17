@@ -6,9 +6,9 @@ xlsx = pd.ExcelFile('imiona.xlsx')
 df = pd.read_excel(xlsx, header=0)
 print(df)
 
-grouped3 = df.groupby(['Rok']).agg({'Liczba':['sum']})
+grouped3 = df.groupby(['Plec'])
 g = grouped3.count()
 print(g)
 
-wykres = g.plot()
+wykres = g.plot.bar()
 plt.show()
